@@ -122,35 +122,7 @@
 
     .line 493
     .local v2, "checkApps":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/String;>;"
-    const-string v11, "com.lbe.security.miui"
-
-    invoke-virtual {v2, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 494
-    const-string v11, "com.android.updater"
-
-    invoke-virtual {v2, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 495
-    const-string v11, "com.miui.securitycenter"
-
-    invoke-virtual {v2, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 496
-    const-string v11, "com.xiaomi.finddevice"
-
-    invoke-virtual {v2, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 497
-    const-string v11, "com.miui.home"
-
-    invoke-virtual {v2, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 498
-    const-string v11, "com.miui.guardprovider"
-
-    invoke-virtual {v2, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
+  
     .line 500
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 

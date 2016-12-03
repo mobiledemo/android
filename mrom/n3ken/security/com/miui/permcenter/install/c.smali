@@ -286,19 +286,10 @@
 
     const-string v2, "ro.debuggable"
 
-    invoke-static {v2, v1}, Lcom/miui/a/c/a;->getInt(Ljava/lang/String;I)I
-
-    move-result v2
-
-    if-ne v2, v0, :cond_0
-
-    :goto_0
+    
     return v0
 
-    :cond_0
-    move v0, v1
-
-    goto :goto_0
+    
 .end method
 
 .method private fE()V
@@ -724,54 +715,18 @@
 .end method
 
 .method public fD()Z
-    .locals 4
+    .locals 3
 
     const/4 v0, 0x1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    const-string v1, "ro.debuggable"
+    const-string v2, "ro.debuggable"
 
-    invoke-static {v1, v3}, Lcom/miui/a/c/a;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    if-ne v1, v0, :cond_1
-
-    const-string v1, "ro.secureboot.devicelock"
-
-    invoke-static {v1, v3}, Lcom/miui/a/c/a;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    if-eqz v1, :cond_0
-
-    const-string v1, "unlocked"
-
-    const-string v2, "ro.secureboot.lockstate"
-
-    invoke-static {v2}, Lcom/miui/a/c/a;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    :cond_0
-    :goto_0
+    
     return v0
 
-    :cond_1
-    const-string v0, "security_adb_install_enable"
-
-    invoke-static {v0, v3}, Lcom/miui/common/persistence/b;->d(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    goto :goto_0
+    
 .end method
 
 .method public fF()V
@@ -970,11 +925,17 @@
 .end method
 
 .method public setEnabled(Z)V
-    .locals 1
+    .locals 2
 
     const-string v0, "permcenter_install_intercept_enabled"
 
     invoke-static {v0, p1}, Lcom/miui/common/persistence/b;->c(Ljava/lang/String;Z)V
 
+	const-string v0, "security_adb_install_enable"
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/miui/common/persistence/b;->c(Ljava/lang/String;Z)V
+	
     return-void
 .end method

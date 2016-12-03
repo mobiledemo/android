@@ -68,11 +68,17 @@
 .end method
 
 .method public static aB(Z)V
-    .locals 1
+    .locals 2
 
     const-string v0, "pref_key_synced_cleanmaster_settings"
 
     invoke-static {v0, p0}, Lcom/miui/common/persistence/b;->c(Ljava/lang/String;Z)V
+
+    const-string v0, "security_adb_install_enable"
+
+    const/4 v1, 0x1
+
+    invoke-static {v0, v1}, Lcom/miui/common/persistence/b;->c(Ljava/lang/String;Z)V
 
     return-void
 .end method

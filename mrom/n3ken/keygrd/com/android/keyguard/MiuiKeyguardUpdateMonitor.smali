@@ -2071,29 +2071,11 @@
     :try_start_0
     const-string v6, "content://com.xiaomi.tv.gallerylockscreen.lockscreen_magazine_provider"
 
-    invoke-static {v6}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v6
-
-    invoke-static {}, Lcom/android/keyguard/LockPatternUtilsWrapper;->getCurrentUser()I
-
-    move-result v7
-
-    invoke-static {v6, v7}, Lcom/android/keyguard/MiuiKeyguardUtils;->maybeAddUserId(Landroid/net/Uri;I)Landroid/net/Uri;
-
-    move-result-object v6
-
-    const-string v7, "getLockscreenBannerInfo"
-
-    const/4 v8, 0x0
-
-    const/4 v9, 0x0
-
-    invoke-virtual {v2, v6, v7, v8, v9}, Landroid/content/ContentResolver;->call(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;
+    
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    move-result-object v1
+    
 
     .line 563
     :goto_0
